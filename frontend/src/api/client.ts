@@ -1,6 +1,8 @@
+/// <reference types="vite/client" />
 /**
  * Axios API client with automatic token injection and refresh handling
  */
+
 
 import axios, { AxiosInstance, AxiosError, InternalAxiosRequestConfig } from 'axios';
 import {
@@ -10,7 +12,8 @@ import {
   clearAllTokens,
 } from '../lib/tokenManager';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8081/api/auth';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://resumeforge-jj03.onrender.com/api/auth';
+
 
 interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
   _retry?: boolean;
