@@ -10,17 +10,18 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.MySQLDialect
         jdbc:
           batch_size: 20
           fetch_size: 50
 
   # DataSource Configuration
   datasource:
-    url: ${SUPABASE_DB_URL:jdbc:postgresql://localhost:5432/resumeforge_auth}
-    username: ${SUPABASE_DB_USER:postgres}
-    password: ${SUPABASE_DB_PASSWORD:password}
-    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL:jdbc:mysql://localhost:3306/resumeforge_auth?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
     hikari:
       maximum-pool-size: 50
       minimum-idle: 10

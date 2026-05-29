@@ -10,14 +10,15 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.MySQLDialect
 
   # DataSource Configuration - will be overridden by Testcontainers
   datasource:
-    url: jdbc:postgresql://localhost:5432/testdb
+    url: jdbc:mysql://localhost:3306/testdb
     username: testuser
     password: testpass
-    driver-class-name: org.postgresql.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
 
   # Jackson Configuration
   jackson:
