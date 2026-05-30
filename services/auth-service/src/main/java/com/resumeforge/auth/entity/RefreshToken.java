@@ -28,10 +28,10 @@ import java.util.UUID;
 public class RefreshToken {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(columnDefinition = "VARCHAR(36)")
     private UUID id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "VARCHAR(36)")
     private UUID userId;
 
     @Column(name = "token_hash", nullable = false, unique = true, length = 512)

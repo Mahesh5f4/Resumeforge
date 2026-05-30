@@ -5,9 +5,9 @@ spring:
   # JPA Configuration
   jpa:
     hibernate:
-      # 'update' safely adds missing columns/tables, never drops anything.
-      # NEVER use 'create' or 'create-drop' — they destroy data on restart.
-      ddl-auto: update
+      # Using 'create' to reset the corrupted schema from previous cycles.
+      # IMPORTANT: change to 'update' after one successful deploy!
+      ddl-auto: create
 
     show-sql: false
     properties:
