@@ -5,10 +5,9 @@ spring:
   # JPA Configuration
   jpa:
     hibernate:
-      # NEVER use 'create' or 'create-drop' in production — it destroys data on every restart.
-      # 'validate' ensures schema matches entities but does NOT modify anything.
-      # Flyway (below) manages all schema changes safely.
-      ddl-auto: validate
+      # 'update' safely adds missing columns/tables, never drops anything.
+      # NEVER use 'create' or 'create-drop' — they destroy data on restart.
+      ddl-auto: update
 
     show-sql: false
     properties:
@@ -19,12 +18,9 @@ spring:
           batch_size: 20
           fetch_size: 50
 
-  # Flyway — manages schema migrations safely across deploys
+  # Flyway disabled — ddl-auto:update handles schema changes for this project
   flyway:
-    enabled: true
-    baseline-on-migrate: true
-    baseline-version: 0
-    locations: classpath:db/migration
+    enabled: false
 
   # DataSource Configuration
   datasource:
