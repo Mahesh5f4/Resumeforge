@@ -34,7 +34,7 @@ public class RefreshToken {
     @Column(nullable = false)
     private UUID userId;
 
-    @Column(name = "token_hash", nullable = false, unique = true, columnDefinition = "TEXT")
+    @Column(name = "token_hash", nullable = false, unique = true, length = 512)
     private String tokenHash;
 
     @Column(nullable = false)

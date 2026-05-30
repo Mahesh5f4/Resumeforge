@@ -25,6 +25,8 @@ spring:
     baseline-on-migrate: true
     baseline-version: 0
     locations: classpath:db/migration
+    # Auto-repair failed migration markers left by ddl-auto:create before Flyway was introduced
+    repair-on-migrate: true
 
   # DataSource Configuration
   datasource:
