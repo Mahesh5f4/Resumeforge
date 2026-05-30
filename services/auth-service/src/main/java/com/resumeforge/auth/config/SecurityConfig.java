@@ -59,8 +59,10 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOriginPatterns(List.of(
-            "http://localhost:5173", 
-            "http://localhost:3000", 
+            "http://localhost:5173",
+            "http://localhost:3000",
+            // Exact production URL — always list explicitly alongside the wildcard pattern
+            "https://resumeforge12.netlify.app",
             "https://*.netlify.app"
         ));
 
